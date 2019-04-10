@@ -38,11 +38,11 @@ public class Resistor
             {
                 ui.fill(c1.r,c1.g,c1.b);
             }
-            if(j==1)
+            else if(j==1)
             {
                 ui.fill(c2.r,c2.g,c2.b);
             }
-            if(j==2)
+            else if(j==2)
             {
                 ui.fill(c3.r,c3.g,c3.b);
             }

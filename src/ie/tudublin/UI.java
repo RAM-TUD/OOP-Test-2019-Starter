@@ -53,10 +53,10 @@ public class UI extends PApplet
 			fill(255);
 			
 			Resistor rt =  resists.get(i);
-			Color c1 = findcolor(rt.hundreds);
-			Color c2 = findcolor(rt.tens);
-			Color c3 = findcolor(rt.ones);
-			
+			Color c1 = (findcolor(rt.hundreds));
+			Color c2 = (findcolor(rt.tens));
+			Color c3 = (findcolor(rt.ones));
+			System.out.println(c1.getColor());
 			rt.render(i,c1,c2,c3);
 		}			
 	}
