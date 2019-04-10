@@ -10,13 +10,17 @@ public class Color
     public int b;
     public float value;
 
+    public Color(String color,int r,int g,int b,float value)
+    {
+        this.color = color;
+        this.r = r;
+        this.b = b;
+        this.g = g;
+        this.value = value;
+    }
     public Color(TableRow row)
     {
-        this.color = row.getString("colour");
-        this.r = row.getInt("r");
-        this.b = row.getInt("b");
-        this.g = row.getInt("g");
-        this.value = row.getInt("value");
+        this(row.getString("colour"),row.getInt("r"),row.getInt("g"),row.getInt("b"),row.getInt("value"));
     }
 
     public String toString()

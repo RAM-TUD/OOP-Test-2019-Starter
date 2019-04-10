@@ -8,7 +8,9 @@ import processing.data.TableRow;
 
 public class UI extends PApplet
 
-{	public void separate(int value)
+{
+	ArrayList<Color>colors = new ArrayList<Color>();
+	public void separate(int value)
 	{
 		int hundreds = (value / 100);
 		int tens = (value - (hundreds * 100)) / 10;
@@ -29,9 +31,27 @@ public class UI extends PApplet
 
 	public void setup() 
 	{
+		loadColor();
+		printcolor();
 	}
 	
 	public void draw()
 	{			
+	}
+	public void loadColor()
+	{
+		Table table = loadTable("colours.csv","header");
+		for(TableRow row:table.rows())
+		{
+			Color c = new Color(row);
+			colors.add(c);
+		}
+	}
+	public void printcolor()
+	{
+		for(Color c:colors)
+		{
+			System.out.println(c);
+		}
 	}
 }
