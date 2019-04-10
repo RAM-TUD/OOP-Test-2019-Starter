@@ -46,7 +46,19 @@ public class UI extends PApplet
 	}
 	
 	public void draw()
-	{			
+	{
+		background(100);
+		for(int i =0 ; i < resists.size();i++)
+		{
+			fill(255);
+			
+			Resistor rt =  resists.get(i);
+			Color c1 = findcolor(rt.hundreds);
+			Color c2 = findcolor(rt.tens);
+			Color c3 = findcolor(rt.ones);
+			
+			rt.render(i,c1,c2,c3);
+		}			
 	}
 	public void loadColor()
 	{
@@ -82,7 +94,7 @@ public class UI extends PApplet
 		{
 			int i =0;
 			int value = row.getInt(i);
-			Resistor r = new Resistor(value);
+			Resistor r = new Resistor(value,this);
 			resists.add(r);
 			i++;
 		}
