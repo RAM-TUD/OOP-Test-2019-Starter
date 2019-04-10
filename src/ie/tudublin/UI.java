@@ -33,6 +33,8 @@ public class UI extends PApplet
 	{
 		loadColor();
 		printcolor();
+		Color c = findcolor(5);
+		System.out.println("the color is " + c.getColor());
 	}
 	
 	public void draw()
@@ -53,5 +55,16 @@ public class UI extends PApplet
 		{
 			System.out.println(c);
 		}
+	}
+	public Color findcolor(int value)
+	{
+		for(Color c:colors)
+		{
+			if(value == c.value)
+			{
+				return c;
+			}
+		}
+		return null;
 	}
 }
